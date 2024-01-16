@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 }
 .activities-container {
@@ -35,11 +36,8 @@ body {
       color: $primary;
     }
   }
-}
-.activities-title-wrapper {
   .add-icon:hover {
     background-color: $hover;
-    transition: all 0.3s ease-in-out;
     i {
       color: $primary;
       transform: rotate(90deg);
@@ -62,6 +60,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .activities-record-wrapper {
   .activities-record-container {
     display: flex;
@@ -75,6 +74,7 @@ body {
       }
     }
     .record-right-content {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -88,6 +88,7 @@ body {
       }
       .ellipses-icon {
         cursor: pointer;
+        background-color: transparent;
         i {
           color: $secondary;
           font-size: 32px;
@@ -96,6 +97,41 @@ body {
       .ellipses-icon:hover {
         background-color: $hover;
         transition: all 0.3s ease-in-out;
+      }
+      .popup-buttons-card {
+        position: absolute;
+        top: 40px;
+        right: 25px;
+        background-color: $primary;
+        border: 1px solid $gray;
+        border-radius: 8px;
+        min-width: 130px;
+        transform: scale(0);
+        transform-origin: top right;
+        transition: all 0.3s ease-out;
+        p {
+          padding: 0;
+          margin: 0;
+          font-weight: 600;
+          cursor: pointer;
+          padding: 4px 8px;
+          color: white;
+        }
+        p:hover {
+          background-color: $hover;
+          transition: all 0.3s ease-in-out;
+          color: black;
+        }
+        hr {
+          height: 1px;
+        }
+      }
+    }
+    .record-right-content:hover {
+      .popup-buttons-card {
+        transform: scale(1);
+        transform-origin: top right;
+        transition: all 0.3s ease-in;
       }
     }
   }

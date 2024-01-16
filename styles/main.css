@@ -11,6 +11,7 @@ body main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .activities-container {
@@ -35,10 +36,8 @@ body main {
   transition: all 0.3s ease-in-out;
   color: #cfcc2b;
 }
-
 .activities-title-wrapper .add-icon:hover {
   background-color: rgb(221, 221, 221);
-  transition: all 0.3s ease-in-out;
 }
 .activities-title-wrapper .add-icon:hover i {
   color: #cfcc2b;
@@ -73,6 +72,7 @@ body main {
   font-size: 18px;
 }
 .activities-record-wrapper .activities-record-container .record-right-content {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,6 +87,7 @@ body main {
 }
 .activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon {
   cursor: pointer;
+  background-color: transparent;
 }
 .activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon i {
   color: #a5a709;
@@ -95,6 +96,39 @@ body main {
 .activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon:hover {
   background-color: rgb(221, 221, 221);
   transition: all 0.3s ease-in-out;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .popup-buttons-card {
+  position: absolute;
+  top: 40px;
+  right: 25px;
+  background-color: #cfcc2b;
+  border: 1px solid #b4b4b4;
+  border-radius: 8px;
+  min-width: 130px;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: all 0.3s ease-out;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .popup-buttons-card p {
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: white;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .popup-buttons-card p:hover {
+  background-color: rgb(221, 221, 221);
+  transition: all 0.3s ease-in-out;
+  color: black;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .popup-buttons-card hr {
+  height: 1px;
+}
+.activities-record-wrapper .activities-record-container .record-right-content:hover .popup-buttons-card {
+  transform: scale(1);
+  transform-origin: top right;
+  transition: all 0.3s ease-in;
 }
 .activities-record-wrapper hr {
   width: 92%;
