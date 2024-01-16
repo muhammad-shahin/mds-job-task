@@ -107,7 +107,7 @@ body main {
   min-width: 130px;
   transform: scale(0);
   transform-origin: top right;
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
 }
 .activities-record-wrapper .activities-record-container .record-right-content .popup-buttons-card p {
   padding: 0;
@@ -125,10 +125,8 @@ body main {
 .activities-record-wrapper .activities-record-container .record-right-content .popup-buttons-card hr {
   height: 1px;
 }
-.activities-record-wrapper .activities-record-container .record-right-content:hover .popup-buttons-card {
+.activities-record-wrapper .activities-record-container .record-right-content .popup {
   transform: scale(1);
-  transform-origin: top right;
-  transition: all 0.3s ease-in;
 }
 .activities-record-wrapper hr {
   width: 92%;
