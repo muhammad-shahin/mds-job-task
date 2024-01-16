@@ -4,11 +4,99 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
-main {
+body main {
+  font-family: "Lato", sans-serif;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.activities-container {
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.activities-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 480px;
+}
+.activities-title-wrapper h1 {
+  color: #a5a709;
+}
+.activities-title-wrapper .add-icon {
+  width: 48px;
+  height: 48px;
+}
+.activities-title-wrapper .add-icon i {
+  transform: rotate(-90deg);
+  transition: all 0.3s ease-in-out;
+  color: #cfcc2b;
+}
+
+.activities-title-wrapper .add-icon:hover {
+  background-color: rgb(221, 221, 221);
+  transition: all 0.3s ease-in-out;
+}
+.activities-title-wrapper .add-icon:hover i {
+  color: #cfcc2b;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.horizontal-row {
+  height: 2px;
+  background-color: #b4b4b4;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+
+.icon-flex {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activities-record-wrapper .activities-record-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activities-record-wrapper .activities-record-container .record-left-content p {
+  color: #b4b4b4;
+  font-weight: 500;
+  font-size: 18px;
+}
+.activities-record-wrapper .activities-record-container .record-right-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .check-icon {
+  background-color: #cfcc2b;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .check-icon i {
+  color: white;
+  font-size: 32px;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon {
+  cursor: pointer;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon i {
+  color: #a5a709;
+  font-size: 32px;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon:hover {
+  background-color: rgb(221, 221, 221);
+  transition: all 0.3s ease-in-out;
+}
+.activities-record-wrapper hr {
+  width: 92%;
+  margin: 0 auto;
 }/*# sourceMappingURL=main.css.map */

@@ -16,10 +16,43 @@
       rel="stylesheet"
       href="bootstrap-5.3.2-dist/css/bootstrap.min.css"
     />
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <main>
-      <h1 class="text-danger">Hello Ji</h1>
+      <div class="activities-container shadow-xl rounded">
+        <div class="activities-title-wrapper p-4">
+          <h1 class="fs-2">Upcoming Activities</h1>
+          <div class="">
+            <button class="rounded-circle p-2 border-0 add-icon">
+              <i class="fa fa-plus fs-3"></i>
+            </button>
+          </div>
+        </div>
+        <hr class="horizontal-row" />
+        <!-- activities records -->
+        <div class="activities-record-wrapper">
+          <div class="activities-record-container p-4">
+            <div class="record-left-content">
+              <h2 class="fs-3">Call katie</h2>
+              <p><span>Aug 27, 2020</span> | <span>Daniel</span></p>
+            </div>
+            <div class="record-right-content">
+              <div class="icon-flex check-icon rounded-circle">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div class="icon-flex ellipses-icon rounded-circle">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <hr class="horizontal-row mb-3" />
+        </div>
+      </div>
     </main>
 
     <!-- scripts -->

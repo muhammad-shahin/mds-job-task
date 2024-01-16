@@ -1,3 +1,4 @@
+@import '_colors';
 // google font
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
@@ -5,12 +6,101 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  main {
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.activities-container {
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.activities-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 480px;
+  h1 {
+    color: $secondary;
+  }
+  .add-icon {
+    width: 48px;
+    height: 48px;
+    i {
+      transform: rotate(-90deg);
+      transition: all 0.3s ease-in-out;
+      color: $primary;
+    }
+  }
+}
+.activities-title-wrapper {
+  .add-icon:hover {
+    background-color: $hover;
+    transition: all 0.3s ease-in-out;
+    i {
+      color: $primary;
+      transform: rotate(90deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
 }
 
-main {
+.horizontal-row {
+  height: 2px;
+  background-color: $gray;
+  border: none;
   width: 100%;
-  min-height: 100vh;
+  margin: 0;
+}
+.icon-flex {
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.activities-record-wrapper {
+  .activities-record-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .record-left-content {
+      p {
+        color: $gray;
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }
+    .record-right-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      .check-icon {
+        background-color: $primary;
+        i {
+          color: white;
+          font-size: 32px;
+        }
+      }
+      .ellipses-icon {
+        cursor: pointer;
+        i {
+          color: $secondary;
+          font-size: 32px;
+        }
+      }
+      .ellipses-icon:hover {
+        background-color: $hover;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  hr {
+    width: 92%;
+    margin: 0 auto;
+  }
 }
