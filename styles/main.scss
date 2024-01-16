@@ -20,9 +20,6 @@ body {
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
 .activities-title-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   min-width: 480px;
   h1 {
     color: $secondary;
@@ -46,6 +43,7 @@ body {
   }
 }
 
+// shared style
 .horizontal-row {
   height: 2px;
   background-color: $gray;
@@ -60,12 +58,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .activities-record-wrapper {
   .activities-record-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     .record-left-content {
       p {
         color: $gray;
@@ -135,4 +135,82 @@ body {
     width: 92%;
     margin: 0 auto;
   }
+}
+
+.activities-modal {
+  min-width: 650px;
+  border: 0;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 0 0 1rem 0;
+
+  .modal-content-wrapper {
+    background-color: $primary;
+    padding: 0 10px;
+    color: white;
+    h3 {
+      font-weight: 600;
+    }
+    button {
+      background-color: transparent;
+      i {
+        color: white;
+      }
+    }
+  }
+  .activities-form {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px 40px;
+    div {
+      min-width: 100%;
+    }
+    label {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .input-field {
+      min-width: 100%;
+      outline: none;
+      padding: 8px 0px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border: 0;
+      border-bottom: 2px solid $hover;
+    }
+    .input-field::placeholder {
+      color: $gray;
+    }
+    .button-wrapper {
+      width: 100%;
+      justify-content: end;
+      gap: 20px;
+      .cancel-btn,
+      .save-btn {
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+      .cancel-btn {
+        border: 2px solid $secondary;
+        color: $secondary;
+      }
+      .save-btn {
+        border: 2px solid $secondary;
+        background-color: $secondary;
+        color: #fff;
+      }
+    }
+  }
+}
+.activities-modal::backdrop {
+  background: rgb(0, 0, 0 / 0.3);
+  opacity: 0.1;
+  backdrop-filter: blur(12px);
 }

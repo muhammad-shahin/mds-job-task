@@ -25,10 +25,10 @@
   <body>
     <main>
       <div class="activities-container shadow-xl rounded">
-        <div class="activities-title-wrapper p-4">
+        <div class="activities-title-wrapper flex-between p-4">
           <h1 class="fs-2">Upcoming Activities</h1>
-          <div class="">
-            <button class="rounded-circle p-2 border-0 add-icon">
+          <div>
+            <button class="rounded-circle p-2 border-0 add-icon open-modal">
               <i class="fa fa-plus fs-3"></i>
             </button>
           </div>
@@ -36,7 +36,7 @@
         <hr class="horizontal-row" />
         <!-- activities records -->
         <div class="activities-record-wrapper">
-          <div class="activities-record-container p-4">
+          <div class="activities-record-container flex-between p-4">
             <div class="record-left-content">
               <h2 class="fs-3">Call katie</h2>
               <p><span>Aug 27, 2020</span> | <span>Daniel</span></p>
@@ -52,16 +52,78 @@
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </button>
               <!-- popup buttons card -->
-              <div class="popup-buttons-card" id="popupCard">
+              <div
+                class="popup-buttons-card"
+                id="popupCard"
+              >
                 <p>Mark as Done</p>
                 <hr class="horizontal-row" />
                 <p>Delete</p>
               </div>
             </div>
           </div>
-          <hr class="horizontal-row mb-3" />
+          <hr class="horizontal-row mb-2" />
         </div>
       </div>
+
+      <!-- modal -->
+      <dialog
+        class="activities-modal"
+        id="activities-modal"
+      >
+        <div class="modal-content-wrapper flex-between">
+          <h3 class="fs-5">Add New Activities</h3>
+          <button
+            class="icon-flex rounded-circle p-2 border-0 add-icon close-modal"
+          >
+            <i class="fa fa-xmark fs-3"></i>
+          </button>
+        </div>
+
+        <!-- add activities form -->
+        <form
+          action=""
+          class="activities-form"
+        >
+          <div>
+            <label for="date">Date Of Birth</label>
+            <input
+              class="input-field"
+              type="date"
+              name="date"
+              id="date"
+              placeholder="MM/DD/YYYY"
+              onfocus="(this.type='date')"
+              onblur="(this.type='text')"
+            />
+          </div>
+          <div>
+            <label for="fullName">Full Name</label>
+            <input
+              class="input-field"
+              type="text"
+              name="fullName"
+              id="fullName"
+              placeholder="Enter Full Name"
+            />
+          </div>
+          <div>
+            <label for="nickName">Nick Name</label>
+            <input
+              class="input-field"
+              type="text"
+              name="nickName"
+              id="nickName"
+              placeholder="Enter Nick Name"
+            />
+          </div>
+          <!-- save & cancel button -->
+          <div class="flex-between button-wrapper">
+            <button class="cancel-btn">Cancel</button>
+            <button class="save-btn">Save</button>
+          </div>
+        </form>
+      </dialog>
     </main>
 
     <!-- scripts -->

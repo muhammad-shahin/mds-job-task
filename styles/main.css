@@ -19,9 +19,6 @@ body main {
 }
 
 .activities-title-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   min-width: 480px;
 }
 .activities-title-wrapper h1 {
@@ -61,11 +58,12 @@ body main {
   align-items: center;
 }
 
-.activities-record-wrapper .activities-record-container {
+.flex-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .activities-record-wrapper .activities-record-container .record-left-content p {
   color: #b4b4b4;
   font-weight: 500;
@@ -131,4 +129,82 @@ body main {
 .activities-record-wrapper hr {
   width: 92%;
   margin: 0 auto;
+}
+
+.activities-modal {
+  min-width: 650px;
+  border: 0;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 0 0 1rem 0;
+}
+.activities-modal .modal-content-wrapper {
+  background-color: #cfcc2b;
+  padding: 0 10px;
+  color: white;
+}
+.activities-modal .modal-content-wrapper h3 {
+  font-weight: 600;
+}
+.activities-modal .modal-content-wrapper button {
+  background-color: transparent;
+}
+.activities-modal .modal-content-wrapper button i {
+  color: white;
+}
+.activities-modal .activities-form {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 40px;
+}
+.activities-modal .activities-form div {
+  min-width: 100%;
+}
+.activities-modal .activities-form label {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.activities-modal .activities-form .input-field {
+  min-width: 100%;
+  outline: none;
+  padding: 8px 0px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 0;
+  border-bottom: 2px solid rgb(221, 221, 221);
+}
+.activities-modal .activities-form .input-field::placeholder {
+  color: #b4b4b4;
+}
+.activities-modal .activities-form .button-wrapper {
+  width: 100%;
+  justify-content: end;
+  gap: 20px;
+}
+.activities-modal .activities-form .button-wrapper .cancel-btn,
+.activities-modal .activities-form .button-wrapper .save-btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.activities-modal .activities-form .button-wrapper .cancel-btn {
+  border: 2px solid #a5a709;
+  color: #a5a709;
+}
+.activities-modal .activities-form .button-wrapper .save-btn {
+  border: 2px solid #a5a709;
+  background-color: #a5a709;
+  color: #fff;
+}
+
+.activities-modal::backdrop {
+  background: rgb(0, 0, 0);
+  opacity: 0.1;
+  backdrop-filter: blur(12px);
 }/*# sourceMappingURL=main.css.map */
