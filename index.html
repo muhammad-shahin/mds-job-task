@@ -35,34 +35,39 @@
         </div>
         <hr class="horizontal-row" />
         <!-- activities records -->
-        <div class="activities-record-wrapper">
-          <div class="activities-record-container flex-between p-4">
-            <div class="record-left-content">
-              <h2 class="fs-3">Call katie</h2>
-              <p><span>Aug 27, 2020</span> | <span>Daniel</span></p>
-            </div>
-            <div class="record-right-content">
-              <div class="icon-flex check-icon rounded-circle">
-                <i class="fa-solid fa-check"></i>
+        <div
+          class="all-activities"
+          id="all-activities"
+        >
+          <div class="activities-record-wrapper">
+            <div class="activities-record-container flex-between p-4">
+              <div class="record-left-content">
+                <h2 class="fs-3">Call katie</h2>
+                <p><span>Aug 27, 2020</span> | <span>Daniel</span></p>
               </div>
-              <button
-                id="ellipses-btn"
-                class="icon-flex ellipses-icon rounded-circle border-0"
-              >
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </button>
-              <!-- popup buttons card -->
-              <div
-                class="popup-buttons-card"
-                id="popupCard"
-              >
-                <p>Mark as Done</p>
-                <hr class="horizontal-row" />
-                <p>Delete</p>
+              <div class="record-right-content">
+                <div class="icon-flex check-icon rounded-circle">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <button
+                  id="ellipses-btn"
+                  class="icon-flex ellipses-icon rounded-circle border-0"
+                >
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+                <!-- popup buttons card -->
+                <div
+                  class="popup-buttons-card"
+                  id="popupCard"
+                >
+                  <p>Mark as Done</p>
+                  <hr class="horizontal-row" />
+                  <p>Delete</p>
+                </div>
               </div>
             </div>
+            <hr class="horizontal-row mb-2" />
           </div>
-          <hr class="horizontal-row mb-2" />
         </div>
       </div>
 
@@ -74,7 +79,8 @@
         <div class="modal-content-wrapper flex-between">
           <h3 class="fs-5">Add New Activities</h3>
           <button
-            class="icon-flex rounded-circle p-2 border-0 add-icon close-modal"
+            class="icon-flex rounded-circle p-2 border-0 add-icon"
+            onclick="closeActivitiesModal()"
           >
             <i class="fa fa-xmark fs-3"></i>
           </button>
@@ -82,8 +88,9 @@
 
         <!-- add activities form -->
         <form
-          action=""
           class="activities-form"
+          onsubmit="handleFormSubmit(event)"
+          method="dialog"
         >
           <div>
             <label for="date">Date Of Birth</label>
@@ -93,6 +100,7 @@
               name="date"
               id="date"
               placeholder="MM/DD/YYYY"
+              required
               onfocus="(this.type='date')"
               onblur="(this.type='text')"
             />
@@ -104,6 +112,7 @@
               type="text"
               name="fullName"
               id="fullName"
+              required
               placeholder="Enter Full Name"
             />
           </div>
@@ -114,13 +123,25 @@
               type="text"
               name="nickName"
               id="nickName"
+              required
               placeholder="Enter Nick Name"
             />
           </div>
           <!-- save & cancel button -->
           <div class="flex-between button-wrapper">
-            <button class="cancel-btn">Cancel</button>
-            <button class="save-btn">Save</button>
+            <button
+              type="button"
+              class="cancel-btn"
+              onclick="closeActivitiesModal()"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="save-btn"
+            >
+              Save
+            </button>
           </div>
         </form>
       </dialog>

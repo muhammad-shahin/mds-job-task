@@ -192,15 +192,24 @@ body main {
   border-radius: 8px;
   font-weight: 600;
   font-size: 1.2rem;
+  transition: all 0.3s ease-in;
 }
 .activities-modal .activities-form .button-wrapper .cancel-btn {
   border: 2px solid #a5a709;
   color: #a5a709;
 }
+.activities-modal .activities-form .button-wrapper .cancel-btn:hover {
+  background-color: #cfcc2b;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
 .activities-modal .activities-form .button-wrapper .save-btn {
   border: 2px solid #a5a709;
   background-color: #a5a709;
   color: #fff;
+}
+.activities-modal .activities-form .button-wrapper .save-btn:hover {
+  background-color: #cfcc2b;
 }
 
 .activities-modal::backdrop {

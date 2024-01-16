@@ -196,15 +196,24 @@ body {
         border-radius: 8px;
         font-weight: 600;
         font-size: 1.2rem;
+        transition: all 0.3s ease-in;
       }
       .cancel-btn {
         border: 2px solid $secondary;
         color: $secondary;
       }
+      .cancel-btn:hover {
+        background-color: $primary;
+        color: #fff;
+        transition: all 0.3s ease-in;
+      }
       .save-btn {
         border: 2px solid $secondary;
         background-color: $secondary;
         color: #fff;
+      }
+      .save-btn:hover {
+        background-color: $primary;
       }
     }
   }
