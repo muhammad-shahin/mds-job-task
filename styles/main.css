@@ -61,6 +61,11 @@ body main {
   transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 768px) {
+  .activities-title-wrapper {
+    min-width: 90%;
+  }
+}
 .horizontal-row {
   height: 2px;
   background-color: #b4b4b4;
@@ -70,8 +75,8 @@ body main {
 }
 
 .icon-flex {
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,19 +88,22 @@ body main {
   align-items: center;
 }
 
-.popup {
-  transform: scale(1);
-  transform-origin: center center;
-  transition: all 0.3s ease-in;
+@media (max-width: 768px) {
+  .icon-flex {
+    width: 2rem;
+    height: 2rem;
+  }
+  .grid-icon {
+    display: none;
+  }
 }
-
 .activities-record-wrapper .activities-record-container {
   gap: 16px;
 }
 .activities-record-wrapper .activities-record-container .record-left-content p {
   color: #b4b4b4;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .activities-record-wrapper .activities-record-container .record-right-content {
   position: relative;
@@ -167,6 +175,30 @@ body main {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .activities-record-wrapper .activities-record-container {
+    gap: 10px;
+  }
+  .activities-record-wrapper .activities-record-container .record-left-content h2 {
+    font-size: 1.2rem !important;
+  }
+  .activities-record-wrapper .activities-record-container .record-left-content p {
+    font-size: 1rem;
+  }
+  .activities-record-wrapper .activities-record-container .record-right-content {
+    gap: 8px;
+  }
+  .activities-record-wrapper .activities-record-container .record-right-content .check-icon i {
+    font-size: 1.35rem;
+  }
+  .activities-record-wrapper .activities-record-container .record-right-content .popup-buttons-card {
+    top: 30px;
+    right: 10px;
+  }
+  .activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon i {
+    font-size: 1.35rem;
+  }
+}
 .activities-modal {
   min-width: 650px;
   border: 0;
@@ -248,6 +280,11 @@ body main {
   background-color: #cfcc2b;
 }
 
+@media (max-width: 768px) {
+  .activities-modal {
+    min-width: 90%;
+  }
+}
 .activities-modal::backdrop {
   background: rgb(0, 0, 0);
   opacity: 0.1;
