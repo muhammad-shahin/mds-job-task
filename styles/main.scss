@@ -16,6 +16,8 @@ body {
     flex-direction: column;
   }
 }
+
+// grid type view style
 .all-activities {
   &.grid {
     display: flex;
@@ -26,9 +28,7 @@ body {
     max-width: 1200px;
   }
 }
-.activities-container {
-  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
-}
+// activities-title-wrapper styles
 .activities-title-wrapper {
   min-width: 520px;
   h1 {
@@ -62,6 +62,7 @@ body {
     }
   }
 }
+// activities-title-wrapper responsive styles
 @media (max-width: 768px) {
   .activities-title-wrapper {
     min-width: 90%;
@@ -88,6 +89,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+// shared responsive styles
 @media (max-width: 768px) {
   .icon-flex {
     width: 2rem;
@@ -98,6 +100,7 @@ body {
   }
 }
 
+// activities-record-wrapper styles
 .activities-record-wrapper {
   .activities-record-container {
     gap: 16px;
@@ -179,6 +182,7 @@ body {
     margin: 0 auto;
   }
 }
+// activities-record-wrapper responsive styles
 @media (max-width: 768px) {
   .activities-record-wrapper {
     .activities-record-container {
@@ -211,6 +215,8 @@ body {
     }
   }
 }
+
+// activities-modal styles
 .activities-modal {
   min-width: 650px;
   border: 0;
@@ -292,9 +298,32 @@ body {
     }
   }
 }
+// activities-modal responsive styles
 @media (max-width: 768px) {
   .activities-modal {
     min-width: 90%;
+
+    .modal-content-wrapper {
+      padding: 8px 20px;
+    }
+    .activities-form {
+      label {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      .input-field {
+        padding: 4px 0px;
+        font-size: 1rem;
+      }
+      .button-wrapper {
+        justify-content: center;
+        .cancel-btn,
+        .save-btn {
+          padding: 2px 16px;
+          font-weight: 500;
+        }
+      }
+    }
   }
 }
 .activities-modal::backdrop {
