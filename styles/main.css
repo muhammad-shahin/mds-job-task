@@ -14,6 +14,37 @@ body main {
   flex-direction: column;
 }
 
+.horizontal-row {
+  height: 2px;
+  background-color: #b4b4b4;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+
+.icon-flex {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .icon-flex {
+    width: 2rem;
+    height: 2rem;
+  }
+  .grid-icon {
+    display: none;
+  }
+}
 .all-activities.grid {
   display: flex;
   justify-content: center;
@@ -60,37 +91,6 @@ body main {
 @media (max-width: 768px) {
   .activities-title-wrapper {
     min-width: 90%;
-  }
-}
-.horizontal-row {
-  height: 2px;
-  background-color: #b4b4b4;
-  border: none;
-  width: 100%;
-  margin: 0;
-}
-
-.icon-flex {
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .icon-flex {
-    width: 2rem;
-    height: 2rem;
-  }
-  .grid-icon {
-    display: none;
   }
 }
 .activities-record-wrapper .activities-record-container {

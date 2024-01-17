@@ -36,6 +36,7 @@ const gridView = (button) => {
     button.title = 'Horizontal View';
   }
 };
+
 /**
  * get previous data, add new data, delete data, and update isDone status
  * using localstorage
@@ -69,7 +70,6 @@ const deleteData = (index) => {
   localStorage.setItem('activitiesData', updatedData);
   showData(storedData);
 };
-
 // update isDone status
 const updateData = (index) => {
   let storedData = getPreviousData();
@@ -101,7 +101,7 @@ const showData = (activities) => {
 
     activitiesWrapper.innerHTML = `
     <div class="activities-record-wrapper">
-            <div class="activities-record-container flex-between p-4">
+            <div class="activities-record-container flex-between p-3 px-4">
               <div class="record-left-content">
                 <h2 class="fs-3">${data?.activityName}</h2>
                 <p><span>${data?.date}</span> | <span>${
@@ -140,7 +140,39 @@ const showData = (activities) => {
     activitiesContainer.appendChild(activitiesWrapper);
   });
 };
-showData(activitiesData);
+// show sample if there is no data to show
+const sampleActivitiesData = [
+  {
+    id: 1,
+    date: '17 Jan, 2024',
+    activityName: 'Sample Activity 1',
+    activityDetails:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, soluta?',
+    isDone: true,
+  },
+  {
+    id: 2,
+    date: '18 Jan, 2024',
+    activityName: 'Sample Activity 2',
+    activityDetails:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, soluta?',
+    isDone: false,
+  },
+  {
+    id: 3,
+    date: '20 Jan, 2024',
+    activityName: 'Sample Activity 3',
+    activityDetails:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, soluta?',
+    isDone: false,
+  },
+];
+if (activitiesData?.length < 1) {
+  localStorage.setItem('activitiesData', JSON.stringify(sampleActivitiesData));
+  showData(getPreviousData());
+} else {
+  showData(activitiesData);
+}
 
 // date formatter
 function formatDate(inputDate) {

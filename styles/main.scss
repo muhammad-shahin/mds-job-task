@@ -17,6 +17,37 @@ body {
   }
 }
 
+// shared style
+.horizontal-row {
+  height: 2px;
+  background-color: $gray;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+.icon-flex {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// shared responsive styles
+@media (max-width: 768px) {
+  .icon-flex {
+    width: 2rem;
+    height: 2rem;
+  }
+  .grid-icon {
+    display: none;
+  }
+}
+
 // grid type view style
 .all-activities {
   &.grid {
@@ -66,37 +97,6 @@ body {
 @media (max-width: 768px) {
   .activities-title-wrapper {
     min-width: 90%;
-  }
-}
-
-// shared style
-.horizontal-row {
-  height: 2px;
-  background-color: $gray;
-  border: none;
-  width: 100%;
-  margin: 0;
-}
-.icon-flex {
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-// shared responsive styles
-@media (max-width: 768px) {
-  .icon-flex {
-    width: 2rem;
-    height: 2rem;
-  }
-  .grid-icon {
-    display: none;
   }
 }
 
