@@ -16,13 +16,33 @@ body {
     flex-direction: column;
   }
 }
+.all-activities {
+  &.grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+  }
+}
 .activities-container {
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
 .activities-title-wrapper {
-  min-width: 480px;
+  min-width: 520px;
   h1 {
     color: $secondary;
+  }
+  .grid-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .grid-icon:hover {
+    background-color: #a5a709;
+    i {
+      color: #fff;
+    }
   }
   .add-icon {
     width: 48px;
@@ -63,7 +83,11 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
+.popup {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: all 0.3s ease-in;
+}
 .activities-record-wrapper {
   .activities-record-container {
     gap: 16px;
@@ -82,9 +106,17 @@ body {
       gap: 10px;
       .check-icon {
         background-color: $primary;
+        transform: scale(0);
+        transform-origin: center center;
+        transition: all 0.3s ease-in;
         i {
           color: white;
           font-size: 32px;
+        }
+        &.is-done {
+          transform: scale(1);
+          transform-origin: center center;
+          transition: transform 0.3s ease-in;
         }
       }
       .ellipses-icon {

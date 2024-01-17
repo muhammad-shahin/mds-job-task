@@ -21,7 +21,21 @@ openModal.addEventListener('click', () => {
 const closeActivitiesModal = () => {
   modal.close();
 };
-
+// toggle grid view
+const activitiesContainer = document.getElementById('all-activities');
+const gridView = (button) => {
+  if (activitiesContainer.classList.contains('grid')) {
+    activitiesContainer.classList.remove('grid');
+    button.style.backgroundColor = 'rgb(221, 221, 221)';
+    button.style.color = 'black';
+    button.title = 'Grid View';
+  } else {
+    activitiesContainer.classList.add('grid');
+    button.style.backgroundColor = '#cfcc2b';
+    button.style.color = '#fff';
+    button.title = 'Horizontal View';
+  }
+};
 /**
  * get previous data, add new data, delete data, and update isDone status
  * using localstorage
@@ -61,8 +75,13 @@ const updateData = (index) => {
   let storedData = getPreviousData();
   if (index >= 0 && index < storedData.length) {
     let statusToUpdate = { ...storedData[index] };
-    statusToUpdate.isDone = true;
-    storedData[index] = statusToUpdate;
+    if (statusToUpdate.isDone) {
+      statusToUpdate.isDone = false;
+      storedData[index] = statusToUpdate;
+    } else {
+      statusToUpdate.isDone = true;
+      storedData[index] = statusToUpdate;
+    }
     const updatedData = JSON.stringify(storedData);
     localStorage.setItem('activitiesData', updatedData);
     showData(storedData);
@@ -75,10 +94,10 @@ const updateData = (index) => {
 const activitiesData = getPreviousData();
 
 const showData = (activities) => {
-  const activitiesContainer = document.getElementById('all-activities');
   activitiesContainer.innerText = '';
   activities?.forEach((data, index) => {
     const activitiesWrapper = document.createElement('div');
+    activitiesWrapper.classList.add('all-activities');
 
     activitiesWrapper.innerHTML = `
     <div class="activities-record-wrapper">
@@ -90,8 +109,8 @@ const showData = (activities) => {
     }</span></p>
               </div>
               <div class="record-right-content">
-                  <div class='icon-flex check-icon rounded-circle ${
-                    data?.isDone === true ? 'd-flex' : 'd-none'
+                  <div class='icon-flex  rounded-circle check-icon ${
+                    data?.isDone === true ? 'is-done' : ''
                   }'>
                     <i class='fa-solid fa-check'></i>
                   </div>
@@ -107,7 +126,9 @@ const showData = (activities) => {
                   class="popup-buttons-card"
                   id="popupCard-${data?.id}"
                 >
-                  <p onclick="updateData(${index})">Mark as Done</p>
+                  <p onclick="updateData(${index})">
+                  ${data?.isDone === true ? 'Not Done' : 'Mark as Done'}
+                  </p>
                   <hr class="horizontal-row" />
                   <p onclick="deleteData(${index})">Delete</p>
                 </div>

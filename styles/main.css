@@ -14,15 +14,34 @@ body main {
   flex-direction: column;
 }
 
+.all-activities.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
 .activities-container {
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .activities-title-wrapper {
-  min-width: 480px;
+  min-width: 520px;
 }
 .activities-title-wrapper h1 {
   color: #a5a709;
+}
+.activities-title-wrapper .grid-icon {
+  width: 48px;
+  height: 48px;
+}
+.activities-title-wrapper .grid-icon:hover {
+  background-color: #a5a709;
+}
+.activities-title-wrapper .grid-icon:hover i {
+  color: #fff;
 }
 .activities-title-wrapper .add-icon {
   width: 48px;
@@ -64,6 +83,12 @@ body main {
   align-items: center;
 }
 
+.popup {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: all 0.3s ease-in;
+}
+
 .activities-record-wrapper .activities-record-container {
   gap: 16px;
 }
@@ -81,10 +106,18 @@ body main {
 }
 .activities-record-wrapper .activities-record-container .record-right-content .check-icon {
   background-color: #cfcc2b;
+  transform: scale(0);
+  transform-origin: center center;
+  transition: all 0.3s ease-in;
 }
 .activities-record-wrapper .activities-record-container .record-right-content .check-icon i {
   color: white;
   font-size: 32px;
+}
+.activities-record-wrapper .activities-record-container .record-right-content .check-icon.is-done {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.3s ease-in;
 }
 .activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon {
   cursor: pointer;

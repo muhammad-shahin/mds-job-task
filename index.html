@@ -27,6 +27,13 @@
       <div class="activities-container shadow-xl rounded">
         <div class="activities-title-wrapper flex-between p-4">
           <h1 class="fs-2">Upcoming Activities</h1>
+          <!-- grid view & vertical view toggle -->
+          <button
+            class="flex-icon rounded-circle border-0 p-2 grid-icon"
+            onclick="gridView(this)"
+          >
+            <i class="fa-solid fa-table-cells"></i>
+          </button>
           <div>
             <button class="rounded-circle p-2 border-0 add-icon open-modal">
               <i class="fa fa-plus fs-3"></i>
@@ -39,35 +46,7 @@
           class="all-activities"
           id="all-activities"
         >
-          <div class="activities-record-wrapper">
-            <div class="activities-record-container flex-between p-4">
-              <div class="record-left-content">
-                <h2 class="fs-3">Call katie</h2>
-                <p><span>Aug 27, 2020</span> | <span>Daniel</span></p>
-              </div>
-              <div class="record-right-content">
-                <div class="icon-flex check-icon rounded-circle">
-                  <i class="fa-solid fa-check"></i>
-                </div>
-                <button
-                  id="ellipses-btn"
-                  class="icon-flex ellipses-icon rounded-circle border-0"
-                >
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
-                </button>
-                <!-- popup buttons card -->
-                <div
-                  class="popup-buttons-card"
-                  id="popupCard"
-                >
-                  <p>Mark as Done</p>
-                  <hr class="horizontal-row" />
-                  <p>Delete</p>
-                </div>
-              </div>
-            </div>
-            <hr class="horizontal-row mb-2" />
-          </div>
+          <!-- activities data will show from localstorage -->
         </div>
       </div>
 
