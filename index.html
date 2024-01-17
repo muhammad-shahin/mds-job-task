@@ -35,7 +35,11 @@
             <i class="fa-solid fa-table-cells"></i>
           </button>
           <div>
-            <button class="rounded-circle p-2 border-0 add-icon open-modal">
+            <button
+              class="rounded-circle p-2 border-0 add-icon"
+              data-bs-toggle="modal"
+              data-bs-target="#activities-modal"
+            >
               <i class="fa fa-plus fs-3"></i>
             </button>
           </div>
@@ -50,86 +54,117 @@
         </div>
       </div>
 
-      <!-- modal -->
-      <dialog
-        class="activities-modal"
+      <!-- Bootstrap Modal -->
+      <div
+        class="modal fade"
         id="activities-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="activitiesModalLabel"
+        aria-hidden="true"
       >
-        <div class="modal-content-wrapper flex-between">
-          <h3 class="fs-5">Add New Activities</h3>
-          <button
-            class="icon-flex rounded-circle p-2 border-0 add-icon"
-            onclick="closeActivitiesModal()"
-          >
-            <i class="fa fa-xmark fs-3"></i>
-          </button>
-        </div>
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div
+              class="d-flex justify-content-between text-white p-3 modal-content-wrapper rounded-top"
+            >
+              <h3 class="fs-5">Add New Activities</h3>
+              <button
+                type="button"
+                class="icon-flex rounded-circle p-2 border-0 add-icon"
+                data-bs-toggle="modal"
+                data-bs-target="#activities-modal"
+              >
+                <i class="fa fa-times fs-3"></i>
+              </button>
+            </div>
 
-        <!-- add activities form -->
-        <form
-          class="activities-form"
-          onsubmit="handleFormSubmit(event)"
-          method="dialog"
-        >
-          <div>
-            <label for="date">Activity Date</label>
-            <input
-              class="input-field"
-              type="date"
-              name="date"
-              id="date"
-              placeholder="MM/DD/YYYY"
-              required
-              onfocus="(this.type='date')"
-              onblur="(this.type='text')"
-            />
-          </div>
-          <div>
-            <label for="activityName">Activity Name</label>
-            <input
-              class="input-field"
-              type="text"
-              name="activityName"
-              id="activityName"
-              required
-              placeholder="Enter Activity Name"
-            />
-          </div>
-          <div>
-            <label for="activityDetails">Activity Details</label>
-            <input
-              class="input-field"
-              type="text"
-              name="activityDetails"
-              id="activityDetails"
-              required
-              placeholder="Enter Activity Details"
-            />
-          </div>
-          <!-- save & cancel button -->
-          <div class="flex-between button-wrapper">
-            <button
-              type="button"
-              class="cancel-btn"
-              onclick="closeActivitiesModal()"
+            <!-- Bootstrap Form -->
+            <form
+              class="activities-form p-4"
+              onsubmit="handleFormSubmit(event)"
             >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              class="save-btn"
-            >
-              Save
-            </button>
+              <div class="mb-3">
+                <label
+                  for="date"
+                  class="form-label"
+                  >Activity Date</label
+                >
+                <input
+                  class="form-control rounded py-3"
+                  type="date"
+                  name="date"
+                  id="date"
+                  placeholder="MM/DD/YYYY"
+                  required
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')"
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  for="activityName"
+                  class="form-label"
+                  >Activity Name</label
+                >
+                <input
+                  class="form-control rounded py-3"
+                  type="text"
+                  name="activityName"
+                  id="activityName"
+                  required
+                  placeholder="Enter Activity Name"
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  for="activityDetails"
+                  class="form-label"
+                  >Activity Details</label
+                >
+                <input
+                  class="form-control rounded py-3"
+                  type="text"
+                  name="activityDetails"
+                  id="activityDetails"
+                  required
+                  placeholder="Enter Activity Details"
+                />
+              </div>
+
+              <!-- Save & Cancel Button -->
+              <div class="d-flex justify-content-end">
+                <button
+                  type="button"
+                  class="btn btn-secondary me-2 cancel-btn rounded"
+                  data-bs-toggle="modal"
+                  data-bs-target="#activities-modal"
+                  style="min-width: 100px; border-radius: 8px"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="btn save-btn rounded save-btn"
+                  style="min-width: 100px; border-radius: 8px"
+                  data-bs-toggle="modal"
+                  data-bs-target="#activities-modal"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
-      </dialog>
+        </div>
+      </div>
     </main>
 
     <!-- scripts -->
     <script src="js/main.js"></script>
     <!-- bootstrap scripts -->
-    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
-    <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    <!-- <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script> -->
+    <!-- bootstrap scripts -->
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

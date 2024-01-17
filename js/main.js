@@ -10,17 +10,6 @@ const openPopup = (event, BtnId) => {
     popupCard.classList.add('popup');
   }
 };
-
-// activities modal toggle
-const modal = document.querySelector('.activities-modal');
-const openModal = document.querySelector('.open-modal');
-
-openModal.addEventListener('click', () => {
-  modal.showModal();
-});
-const closeActivitiesModal = () => {
-  modal.close();
-};
 // toggle grid view
 const activitiesContainer = document.getElementById('all-activities');
 const gridView = (button) => {
@@ -31,7 +20,7 @@ const gridView = (button) => {
     button.title = 'Grid View';
   } else {
     activitiesContainer.classList.add('grid');
-    button.style.backgroundColor = '#cfcc2b';
+    button.style.backgroundColor = '#be3ef7';
     button.style.color = '#fff';
     button.title = 'Horizontal View';
   }
@@ -205,5 +194,4 @@ const handleFormSubmit = (event) => {
   // reset form data, update in ui, & close modal
   event.target.reset();
   showData(getPreviousData());
-  closeActivitiesModal();
 };

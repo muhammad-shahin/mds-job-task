@@ -58,14 +58,17 @@ body main {
   min-width: 520px;
 }
 .activities-title-wrapper h1 {
-  color: #a5a709;
+  color: #be3ef7;
 }
 .activities-title-wrapper .grid-icon {
   width: 48px;
   height: 48px;
 }
+.activities-title-wrapper .grid-icon i {
+  color: #a41edb;
+}
 .activities-title-wrapper .grid-icon:hover {
-  background-color: #a5a709;
+  background-color: #a41edb;
 }
 .activities-title-wrapper .grid-icon:hover i {
   color: #fff;
@@ -77,13 +80,13 @@ body main {
 .activities-title-wrapper .add-icon i {
   transform: rotate(-90deg);
   transition: all 0.3s ease-in-out;
-  color: #cfcc2b;
+  color: #a41edb;
 }
 .activities-title-wrapper .add-icon:hover {
   background-color: rgb(221, 221, 221);
 }
 .activities-title-wrapper .add-icon:hover i {
-  color: #cfcc2b;
+  color: #a41edb;
   transform: rotate(90deg);
   transition: all 0.3s ease-in-out;
 }
@@ -96,10 +99,14 @@ body main {
 .activities-record-wrapper .activities-record-container {
   gap: 16px;
 }
+.activities-record-wrapper .activities-record-container .record-left-content h2 {
+  color: #a41edb;
+}
 .activities-record-wrapper .activities-record-container .record-left-content p {
-  color: #b4b4b4;
-  font-weight: 500;
-  font-size: 1.125rem;
+  color: #be3ef7;
+  opacity: 0.6;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 .activities-record-wrapper .activities-record-container .record-right-content {
   position: relative;
@@ -109,7 +116,7 @@ body main {
   gap: 10px;
 }
 .activities-record-wrapper .activities-record-container .record-right-content .check-icon {
-  background-color: #cfcc2b;
+  background-color: #a41edb;
   transform: scale(0);
   transform-origin: center center;
   transition: all 0.3s ease-in;
@@ -128,7 +135,7 @@ body main {
   background-color: transparent;
 }
 .activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon i {
-  color: #a5a709;
+  color: #be3ef7;
   font-size: 32px;
 }
 .activities-record-wrapper .activities-record-container .record-right-content .ellipses-icon:hover {
@@ -139,7 +146,7 @@ body main {
   position: absolute;
   top: 40px;
   right: 25px;
-  background-color: #cfcc2b;
+  background-color: #a41edb;
   border: 1px solid #b4b4b4;
   border-radius: 8px;
   min-width: 130px;
@@ -195,113 +202,15 @@ body main {
     font-size: 1.35rem;
   }
 }
-.activities-modal {
-  min-width: 650px;
-  border: 0;
-  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 0 0 1rem 0;
-}
-.activities-modal .modal-content-wrapper {
-  background-color: #cfcc2b;
-  padding: 0 10px;
-  color: white;
-}
-.activities-modal .modal-content-wrapper h3 {
-  font-weight: 600;
-}
-.activities-modal .modal-content-wrapper button {
-  background-color: transparent;
-}
-.activities-modal .modal-content-wrapper button i {
-  color: white;
-}
-.activities-modal .activities-form {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  padding: 20px 40px;
-}
-.activities-modal .activities-form div {
-  min-width: 100%;
-}
-.activities-modal .activities-form label {
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-.activities-modal .activities-form .input-field {
-  min-width: 100%;
-  outline: none;
-  padding: 8px 0px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border: 0;
-  border-bottom: 2px solid rgb(221, 221, 221);
-}
-.activities-modal .activities-form .input-field::placeholder {
-  color: #b4b4b4;
-}
-.activities-modal .activities-form .button-wrapper {
-  width: 100%;
-  justify-content: end;
-  gap: 20px;
-}
-.activities-modal .activities-form .button-wrapper .cancel-btn,
-.activities-modal .activities-form .button-wrapper .save-btn {
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1.2rem;
-  transition: all 0.3s ease-in;
-}
-.activities-modal .activities-form .button-wrapper .cancel-btn {
-  border: 2px solid #a5a709;
-  color: #a5a709;
-}
-.activities-modal .activities-form .button-wrapper .cancel-btn:hover {
-  background-color: #cfcc2b;
-  color: #fff;
-  transition: all 0.3s ease-in;
-}
-.activities-modal .activities-form .button-wrapper .save-btn {
-  border: 2px solid #a5a709;
-  background-color: #a5a709;
-  color: #fff;
-}
-.activities-modal .activities-form .button-wrapper .save-btn:hover {
-  background-color: #cfcc2b;
+.modal-content-wrapper {
+  background-color: #a41edb;
 }
 
-@media (max-width: 768px) {
-  .activities-modal {
-    min-width: 90%;
-  }
-  .activities-modal .modal-content-wrapper {
-    padding: 8px 20px;
-  }
-  .activities-modal .activities-form label {
-    font-weight: 500;
-    font-size: 1rem;
-  }
-  .activities-modal .activities-form .input-field {
-    padding: 4px 0px;
-    font-size: 1rem;
-  }
-  .activities-modal .activities-form .button-wrapper {
-    justify-content: center;
-  }
-  .activities-modal .activities-form .button-wrapper .cancel-btn,
-  .activities-modal .activities-form .button-wrapper .save-btn {
-    padding: 2px 16px;
-    font-weight: 500;
-  }
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(164, 30, 219, 0.2) !important;
 }
-.activities-modal::backdrop {
-  background: rgb(0, 0, 0);
-  opacity: 0.1;
-  backdrop-filter: blur(12px);
+
+.save-btn {
+  background-color: #a41edb !important;
+  color: white !important;
 }/*# sourceMappingURL=main.css.map */

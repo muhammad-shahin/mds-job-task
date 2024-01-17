@@ -68,9 +68,12 @@ body {
   .grid-icon {
     width: 48px;
     height: 48px;
+    i {
+      color: $primary;
+    }
   }
   .grid-icon:hover {
-    background-color: #a5a709;
+    background-color: $primary;
     i {
       color: #fff;
     }
@@ -105,10 +108,14 @@ body {
   .activities-record-container {
     gap: 16px;
     .record-left-content {
+      h2 {
+        color: $primary;
+      }
       p {
-        color: $gray;
-        font-weight: 500;
-        font-size: 1.125rem;
+        color: $secondary;
+        opacity: 0.6;
+        font-weight: 600;
+        font-size: 1.05rem;
       }
     }
     .record-right-content {
@@ -216,118 +223,16 @@ body {
   }
 }
 
-// activities-modal styles
-.activities-modal {
-  min-width: 650px;
-  border: 0;
-  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 0 0 1rem 0;
-
-  .modal-content-wrapper {
-    background-color: $primary;
-    padding: 0 10px;
-    color: white;
-    h3 {
-      font-weight: 600;
-    }
-    button {
-      background-color: transparent;
-      i {
-        color: white;
-      }
-    }
-  }
-  .activities-form {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    padding: 20px 40px;
-    div {
-      min-width: 100%;
-    }
-    label {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-    .input-field {
-      min-width: 100%;
-      outline: none;
-      padding: 8px 0px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      border: 0;
-      border-bottom: 2px solid $hover;
-    }
-    .input-field::placeholder {
-      color: $gray;
-    }
-    .button-wrapper {
-      width: 100%;
-      justify-content: end;
-      gap: 20px;
-      .cancel-btn,
-      .save-btn {
-        padding: 8px 20px;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1.2rem;
-        transition: all 0.3s ease-in;
-      }
-      .cancel-btn {
-        border: 2px solid $secondary;
-        color: $secondary;
-      }
-      .cancel-btn:hover {
-        background-color: $primary;
-        color: #fff;
-        transition: all 0.3s ease-in;
-      }
-      .save-btn {
-        border: 2px solid $secondary;
-        background-color: $secondary;
-        color: #fff;
-      }
-      .save-btn:hover {
-        background-color: $primary;
-      }
-    }
-  }
+// modal styles
+.modal-content-wrapper {
+  background-color: $primary;
 }
-// activities-modal responsive styles
-@media (max-width: 768px) {
-  .activities-modal {
-    min-width: 90%;
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba($primary, 0.2) !important;
 
-    .modal-content-wrapper {
-      padding: 8px 20px;
-    }
-    .activities-form {
-      label {
-        font-weight: 500;
-        font-size: 1rem;
-      }
-      .input-field {
-        padding: 4px 0px;
-        font-size: 1rem;
-      }
-      .button-wrapper {
-        justify-content: center;
-        .cancel-btn,
-        .save-btn {
-          padding: 2px 16px;
-          font-weight: 500;
-        }
-      }
-    }
-  }
+  // opacity: 0.3;
 }
-.activities-modal::backdrop {
-  background: rgb(0, 0, 0 / 0.3);
-  opacity: 0.1;
-  backdrop-filter: blur(12px);
+.save-btn {
+  background-color: $primary !important;
+  color: white !important;
 }
