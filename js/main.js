@@ -93,9 +93,9 @@ const showData = (activities) => {
             <div class="activities-record-container flex-between p-3 px-4">
               <div class="record-left-content">
                 <h2 class="fs-3">${data?.activityName}</h2>
-                <p><span>${data?.date}</span> | <span>${
-      data?.activityDetails
-    }</span></p>
+                <p style="max-width: 450px;"><span>${
+                  data?.date
+                }</span> | <span>${data?.activityDetails}</span></p>
               </div>
               <div class="record-right-content">
                   <div class='icon-flex  rounded-circle check-icon ${
