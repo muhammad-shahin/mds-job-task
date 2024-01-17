@@ -66,6 +66,7 @@ body {
 
 .activities-record-wrapper {
   .activities-record-container {
+    gap: 16px;
     .record-left-content {
       p {
         color: $gray;
@@ -78,7 +79,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 40px;
+      gap: 10px;
       .check-icon {
         background-color: $primary;
         i {

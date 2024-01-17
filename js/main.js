@@ -1,5 +1,3 @@
-// import { getPreviousData, addNewData } from './localDB';
-
 // mark as done & delete popup
 const openPopup = (event, BtnId) => {
   console.log(BtnId);
@@ -25,10 +23,10 @@ const closeActivitiesModal = () => {
 };
 
 /**
- * -------------------------------
- * localstorage function
- * -------------------------------
+ * get previous data, add new data, delete data, and update isDone status
+ * using localstorage
  */
+
 // get the previous data from localstorage
 const getPreviousData = () => {
   const oldData = JSON.parse(localStorage.getItem('activitiesData'));
@@ -38,21 +36,17 @@ const getPreviousData = () => {
     return [];
   }
 };
-
-// get the previous data from localstorage
+// add new activities
 const addNewData = (newData) => {
   const storedData = getPreviousData();
   storedData.push(newData);
   const updatedData = JSON.stringify(storedData);
   localStorage.setItem('activitiesData', updatedData);
 };
-
-// delete data from localstorage
+// delete activities data
 const deleteData = (index) => {
   let storedData = getPreviousData();
-  // Check if the index is valid
   if (index >= 0 && index < storedData.length) {
-    // Use splice to remove the element at the specified index
     storedData.splice(index, 1);
   } else {
     console.log('Invalid index');
@@ -61,12 +55,11 @@ const deleteData = (index) => {
   localStorage.setItem('activitiesData', updatedData);
   showData(storedData);
 };
-// update isDone status from localstorage
+
+// update isDone status
 const updateData = (index) => {
   let storedData = getPreviousData();
-  // Check if the index is valid
   if (index >= 0 && index < storedData.length) {
-    // Use splice to remove the element at the specified index
     let statusToUpdate = { ...storedData[index] };
     statusToUpdate.isDone = true;
     storedData[index] = statusToUpdate;
@@ -76,15 +69,9 @@ const updateData = (index) => {
   } else {
     console.log('Invalid index');
   }
-  // const updatedData = JSON.stringify(storedData);
-  // localStorage.setItem('activitiesData', updatedData);
-  // showData(storedData);
 };
 
-/**
- * Show data in UI
- */
-
+// Show activities data in UI
 const activitiesData = getPreviousData();
 
 const showData = (activities) => {
@@ -98,9 +85,9 @@ const showData = (activities) => {
             <div class="activities-record-container flex-between p-4">
               <div class="record-left-content">
                 <h2 class="fs-3">${data?.activityName}</h2>
-                <p><span>Aug 27, 2020</span> | <span>${
-                  data?.activityDetails
-                }</span></p>
+                <p><span>${data?.date}</span> | <span>${
+      data?.activityDetails
+    }</span></p>
               </div>
               <div class="record-right-content">
                   <div class='icon-flex check-icon rounded-circle ${
@@ -134,18 +121,28 @@ const showData = (activities) => {
 };
 showData(activitiesData);
 
-// handle form data
+// date formatter
+function formatDate(inputDate) {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = new Date(inputDate).toLocaleDateString(
+    'en-US',
+    options
+  );
+  return formattedDate;
+}
+
+// handle form submit
 const handleFormSubmit = (event) => {
   event.preventDefault();
-
   const dateInput = document.getElementById('date');
   const activityNameInput = document.getElementById('activityName');
   const activityDetailsInput = document.getElementById('activityDetails');
+  const formattedDate = formatDate(dateInput.value);
 
   // store form data
   const formData = {
     id: getPreviousData()?.length + 1,
-    date: dateInput.value,
+    date: formattedDate,
     activityName: activityNameInput.value,
     activityDetails: activityDetailsInput.value,
     isDone: false,

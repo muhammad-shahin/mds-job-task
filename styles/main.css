@@ -64,6 +64,9 @@ body main {
   align-items: center;
 }
 
+.activities-record-wrapper .activities-record-container {
+  gap: 16px;
+}
 .activities-record-wrapper .activities-record-container .record-left-content p {
   color: #b4b4b4;
   font-weight: 500;
@@ -74,7 +77,7 @@ body main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
 }
 .activities-record-wrapper .activities-record-container .record-right-content .check-icon {
   background-color: #cfcc2b;
